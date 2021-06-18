@@ -1,0 +1,26 @@
+server:
+  port: 8088
+
+
+spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver          # mysql驱动
+#      url: jdbc:mysql://localhost:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+#      username: root
+#      password: root
+  redis:
+    #Redis 单机单实例
+#    database: 1
+#    host: 192.168.17.144
+#    port: 6381
+#    password: imooc
+    #redis 哨兵实例
+    database: 1
+#    password: imooc
+    sentinel:
+      master: imooc-master
+      nodes: 192.168.17.114:26379,192.168.17.114:26380,192.168.17.114:26381
+
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
